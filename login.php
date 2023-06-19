@@ -1,31 +1,40 @@
 <?php
-	session_start();
-	include("db.php");
-	
-	if (isset($_POST['login'])) {
-		$user = $_POST['Username'];
-		$password = $_POST['Pass'];
+session_start();
+include("db.php");
 
-		if (!empty($user) && !empty($password)) {
-			$select = mysqli_query($conn, "SELECT * FROM admin WHERE user = '$user' AND password = '$password'");
-			$row = mysqli_fetch_array($select);
+if (isset($_POST['login'])) {
+    $user = $_POST['Username'];
+    $password = $_POST['Pass'];
 
-			if (is_array($row)) {
-				$_SESSION["user"] = $row['user'];
-				$_SESSION["password"] = $row['password'];
-				header("Location: admin/admin.php");
-				die;
-			} else {
-				echo '<script type="text/javascript">';
-				echo 'alert("Usuario o contraseña incorrectos")';
-				echo '</script>';
-			}
-		} else {
-			echo '<script type="text/javascript">';
-			echo 'alert("Por favor, ingrese un nombre de usuario y contraseña")';
-			echo '</script>';
-		}
-	}
+    if (!empty($user) && !empty($password)) {
+   
+        $adminQuery = mysqli_query($conn, "SELECT * FROM admin WHERE user = '$user' AND password = '$password'");
+        $adminRow = mysqli_fetch_array($adminQuery);
+
+        $clienteQuery = mysqli_query($conn, "SELECT * FROM client WHERE user = '$user' AND password = '$password'");
+        $clienteRow = mysqli_fetch_array($clienteQuery);
+
+        if (is_array($adminRow)) {
+            $_SESSION["user"] = $adminRow['user'];
+            $_SESSION["password"] = $adminRow['password'];
+            header("Location: admin/admin.php"); 
+            die;
+        } elseif (is_array($clienteRow)) {
+            $_SESSION["user"] = $clienteRow['user'];
+            $_SESSION["password"] = $clienteRow['password'];
+            header("Location: cliente/cliente.php"); 
+            die;
+        } else {
+            echo '<script type="text/javascript">';
+            echo 'alert("Usuario o contraseña incorrectos")';
+            echo '</script>';
+        }
+    } else {
+        echo '<script type="text/javascript">';
+        echo 'alert("Por favor, ingrese un nombre de usuario y contraseña")';
+        echo '</script>';
+    }
+}
 ?>
 
 <!DOCTYPE html>

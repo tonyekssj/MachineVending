@@ -14,7 +14,7 @@ body {
     padding: 50px;
 }
 
-.admin { 
+.cliente { 
     border-color: #aaaaaa;
     border-width: 1px;
     border-style: solid;
@@ -22,7 +22,7 @@ body {
     width: 300px;
 }
 
-.admin-screen {
+.cliente-screen {
     background-color: #FFF;
     padding: 20px;
     border-radius: 5px
@@ -30,7 +30,7 @@ body {
     
 
     
-.admin-form {
+.cliente-form {
     text-align: center;
 }
 
@@ -54,7 +54,7 @@ input:focus {
     
 .btn {
     border: 2px solid transparent;
-    background: #3498DB;
+    background: #2ec53d;
     color: #ffffff;
     font-size: 16px;
     line-height: 25px;
@@ -70,7 +70,7 @@ input:focus {
 }
     
 .btn:hover {
-    background-color: #2980B9;
+    background-color: #217b1e;
 }
     
 .logout-link {

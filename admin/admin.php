@@ -16,7 +16,7 @@ if ($_SESSION["user"]) {
     <script>
         function verificarEstado() {
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "http://192.168.0.37/verificarEstado", true);
+            xhr.open("POST", "http://192.168.0.14/verificarEstado", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -41,7 +41,7 @@ if ($_SESSION["user"]) {
                 </div>
             </form>
 
-            <form action="" method="post">
+            <form action="ventas.php" method="post">
                 <div class="admin-form">    
                     <input type="submit" class="btn btn-primary btn-large btn-block" name="ventas" value="Ventas"><br>
                 </div>
