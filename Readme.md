@@ -31,11 +31,15 @@ Este proyecto implementa un servidor web utilizando microcontroladores ESP32 par
 
 5. La máquina expendedora dispensará los detergentes seleccionados y actualizará automáticamente el inventario.
 
+## Imagenes
+![Image description](/images/Login.png)  
+![Image description](/images/admin.png)  
+![Image description](/images/user.png)  
 
 ## Contacto
-Antonio Guadalupe Vazquez Colin. 
-Ing En Computacion. 
-gvazquez10@uabc.edu.mx. 
+Antonio Guadalupe Vazquez Colin.   
+Ing En Computacion.   
+gvazquez10@uabc.edu.mx.   
 
 ---
 
